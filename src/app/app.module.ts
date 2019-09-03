@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import {CustomMaterialModule} from './core/material.module';
+import {IndexComponent} from './index/index.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    UserComponent
+    UserComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
