@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import {CustomMaterialModule} from './core/material.module';
-import { RegistrationComponent } from './registration/registration.component';
+import { RegistrationComponent } from './signup/registration.component';
+import { SignupComponent } from './signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     UserComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
