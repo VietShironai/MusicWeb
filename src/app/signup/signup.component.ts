@@ -10,6 +10,7 @@ export class SignupComponent implements OnInit {
   username: any;
   password: any;
   numberphone: any;
+  signupForm: any;
 
   constructor(private router: Router) { }
   ngOnInit() {
