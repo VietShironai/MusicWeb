@@ -3,30 +3,61 @@
     <mat-card-title>Sign Up</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <form class="example-form">
+    <form class="example-form" [formGroup]="signupform">
+
       <table class="example-full-width" cellspacing="0">
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+              <input matInput placeholder="Username" id="username" class="form-control" name="username"
+                     formControlName="username" required>
             </mat-form-field>
+            <div *ngIf="signupform.get('username').touched && signupform.get('username').invalid">
+              <p>Name must be at least 6 characters long.</p>
+            </div>
           </td>
-        </tr>
-        <tr>
-          <td><mat-form-field class="example-full-width">
-            <input matInput placeholder="Password" [(ngModel)]="password"type="password" name="password" required>
-          </mat-form-field></td>
         </tr>
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Number Phone" [(ngModel)]="numberphone" name="numberphone" required>
+              <input matInput placeholder="Password" id="password" class="form-control" name="password"
+                     formControlName="password" required>
             </mat-form-field>
+            <div *ngIf="signupform.get('password').touched && signupform.get('password').errors">
+              <p>Password must be at least 6 characters long.</p>
+            </div>
           </td>
-        </tr></table>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Number Phone" class="form-control" formControlName="numberphone"
+                     id="numberphone" name="numberphone" required>
+            </mat-form-field>
+            <div *ngIf="signupform.get('numberphone').touched && signupform.get('numberphone').invalid">
+              <p> Number Phone is not valid</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Email" formControlName="email" class="form-control" id="email" name="email"
+                     required>
+            </mat-form-field>
+            <div *ngIf="signupform.get('email').touched && signupform.get('email').invalid">
+              <p>Email is not valid</p>
+            </div>
+          </td>
+        </tr>
+      </table>
     </form>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button (click)="signup()" color="primary">Sign Up</button>
   </mat-card-actions>
 </mat-card>
+<pre>{{signupform.value|json}}</pre>
+<pre> {{signupform.get('password').errors|json}}</pre>
+<pre>{{signupform.get('username').errors|json}}</pre>
+
