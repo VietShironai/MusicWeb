@@ -1,6 +1,6 @@
 <form [formGroup]="userForm" (ngSubmit)="signup()">
-  <div>
-    <label>User
+  <div> error => console.log(error)
+    <label>User error => console.log(error)
       <br>
       <input type="text" formControlName="user">
     </label>
@@ -26,4 +26,7 @@
   </div>
   <div *ngIf="userForm.get('email').invalid && userForm.get('email').untouched" style="color: blue">
   </div>
+  <button type="submit">Submit</button>
+
+
 </form>

@@ -8,7 +8,7 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class UserService {
-  private userURL = 'localhost:8080/user/';
+  private userURL = 'http:localhost:8080/user/';
   constructor(private http: HttpClient) {
 
   }

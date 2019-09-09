@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {UserService} from '../user.service';
-import {FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {IUser} from '../user';
 
 @Component({
@@ -14,9 +14,16 @@ export class SignupComponent implements OnInit {
   userForm: FormGroup;
   constructor(private router: Router,
               private userService: UserService,
+              private fb: FormBuilder
 
   ) { }
   ngOnInit() {
+    this.userForm = this.fb.group({
+      user: '',
+      password: '',
+      email: ''
+    });
+    this.userService.getUsers().subscribe(data => (this.userList = data), error => console.log(error));
   }
 
   signup() {
@@ -29,7 +36,7 @@ export class SignupComponent implements OnInit {
           password: '',
           email: ''
         });
-      });
+      }, error => console.log(error));
     }
   }
 }
