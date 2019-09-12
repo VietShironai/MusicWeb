@@ -1,39 +1,39 @@
 <style>
-  .dropdown:hover>.dropdown-menu{
+  .dropdown:hover > .dropdown-menu {
     display: block;
 
   }
-  .mega-menu{
+
+  .mega-menu {
     width: 800px;
     overflow: hidden;
     padding: 10px;
   }
 </style>
-
-<div class="container-fluid bg-dark ">
+<div class="container">
+<div class="container-fluid bg-light">
   <div class="container">
     <div class="row text-light pt-3 pb-1">
-      <div class="col-md-2">
-        <img src="../../assets/img/logo600.png" style="height: 40px;width: 50px">
+      <div class="col-md-3">
+        <img src="../../assets/img/customLogo.png" height="58" width="200"/>
+        <!--        <img src="../../assets/img/logo600.png" style="height: 40px;width: 50px">-->
       </div>
-      <div class="col-md-6">
+      <div class="col-md-5">
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"><i class="material-icons">search</i></span>
           </div>
-          <input type="text" class="form-control" placeholder="nhap ten ca si,mv,bai hat"
-                 aria-label="nhap ten ca si,mv,bai hat"
+          <input type="text" class="form-control" placeholder="nhập tên ca sĩ, bài hát hoặc mv"
                  aria-describedby="basic-addon1">
         </div>
       </div>
-      <div class="col-md-2 offset-md-1"><i class="material-icons"> supervised_user_circle</i>
-      <nav>
-        <a routerLink="login"> Login </a>
-      </nav>
+      <div class="col-md-2 offset-md-1">
+        <span class="input-group-text"><i class="material-icons"> supervised_user_circle</i><a routerLink="login">   Đăng Nhập </a></span>
       </div>
       <div class="col-md ml-1">
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="#">Action</a>
@@ -41,21 +41,23 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </div>
-    </div>
+      </div>
 
+    </div>
   </div>
-</div>
 </div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Trang chủ</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
           #ZingChart
         </a>
         <div class="dropdown-menu mega-menu" aria-labelledby="navbarDropdown">
@@ -84,7 +86,8 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
           TOP100
         </a>
         <div class="dropdown-menu mega-menu" aria-labelledby="navbarDropdown">
@@ -129,7 +132,8 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
           CHỦ ĐỀ
         </a>
         <div class="dropdown-menu mega-menu" aria-labelledby="navbarDropdown">
@@ -173,8 +177,9 @@
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            MV
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          MV
         </a>
         <div class="dropdown-menu mega-menu" aria-labelledby="navbarDropdown">
           <div class="row">
@@ -218,7 +223,8 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
           ALBUM
         </a>
         <div class="dropdown-menu mega-menu" aria-labelledby="navbarDropdown">
@@ -263,7 +269,8 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown6" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown6" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
           NGHỆ SỸ
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -277,3 +284,4 @@
 
   </div>
 </nav>
+</div>
