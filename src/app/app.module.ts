@@ -11,7 +11,7 @@ import {CustomMaterialModule} from './core/material.module';
 import {SignupComponent} from './signup/signup.component';
 import {HttpClientModule} from '@angular/common/http';
 import {IndexComponent} from './index/index.component';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import { ScreensaverComponent } from './screensaver/screensaver.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import {FormBuilder, FormGroup} from '@angular/forms';
     LoginComponent,
     UserComponent,
     SignupComponent,
-    IndexComponent
+    IndexComponent,
+    ScreensaverComponent
   ],
   imports: [
     BrowserModule,

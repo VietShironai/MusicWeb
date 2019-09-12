@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {IUser} from '../user';
 import {UserService} from '../user.service';
+import set = Reflect.set;
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -34,7 +35,8 @@ export class SignupComponent implements OnInit {
           password: '',
           email: ''
         });
-      }, error => console.log(error));
+
+      });this.router.navigate(['screensaver']);
     }
   }
 }
