@@ -14,7 +14,8 @@
           </tr>
           <tr>
             <td><mat-form-field class="example-full-width">
-              <input matInput placeholder="Password" [(ngModel)]="password"type="password" name="password" required>
+              <mat-pass-toggle-visibility #toggle matSuffix></mat-pass-toggle-visibility>
+              <input matInput placeholder="Password" [type]="toggle.type" [(ngModel)]="password"type="password" name="password" required>
             </mat-form-field></td>
           </tr></table>
       </form>
