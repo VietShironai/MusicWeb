@@ -12,6 +12,7 @@ import {SignupComponent} from './signup/signup.component';
 import {HttpClientModule} from '@angular/common/http';
 import {IndexComponent} from './index/index.component';
 import { ScreensaverComponent } from './screensaver/screensaver.component';
+import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ScreensaverComponent } from './screensaver/screensaver.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatPasswordStrengthModule,
   ],
   providers: [Validators],
   bootstrap: [AppComponent]

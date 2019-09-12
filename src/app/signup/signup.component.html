@@ -19,8 +19,10 @@
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Password" id="password" class="form-control" name="password"
+              <mat-pass-toggle-visibility #toggle matSuffix></mat-pass-toggle-visibility>
+              <input matInput placeholder="Password" [type]="toggle.type" id="password" class="form-control" name="password"
                      formControlName="password" required>
+
             </mat-form-field>
             <div *ngIf="signupform.get('password').touched && signupform.get('password').errors">
               <p>Password must be at least 6 characters long.</p>
