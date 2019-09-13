@@ -1,12 +1,29 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+// tslint:disable-next-line:import-spacing
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {LoginComponent} from './login/login.component';
+import {UserComponent} from './user/user.component';
+import {SignupComponent} from './signup/signup.component';
+import {IndexComponent} from './index/index.component';
+import {ScreensaveComponent} from './screensave/screensave.component';
 
-
+const routes: Routes = [
+  {path: 'user', component: UserComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'signUp', component : SignupComponent},
+  {path: 'index', component: IndexComponent},
+  {path: '', component: IndexComponent},
+  {path: 'screensaver', component: ScreensaveComponent}
+];
 
 @NgModule({
-  declarations: [],
   imports: [
-    CommonModule
-  ]
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
+  ],
+  declarations: []
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

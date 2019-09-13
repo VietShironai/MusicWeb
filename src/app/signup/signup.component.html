@@ -1,0 +1,60 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Sign Up</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form" [formGroup]="signupform">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Username" id="username" class="form-control" name="username"
+                     formControlName="username" required>
+            </mat-form-field>
+            <div *ngIf="signupform.get('username').touched && signupform.get('username').invalid">
+              <p>Name must be at least 6 characters long.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-pass-toggle-visibility #toggle matSuffix></mat-pass-toggle-visibility>
+              <input matInput placeholder="Password" id="password"  class="form-control" name="password"
+                     formControlName="password" [type]="toggle.type" required>
+
+            </mat-form-field>
+            <div *ngIf="signupform.get('password').touched && signupform.get('password').errors">
+              <p>Password must be at least 6 characters long.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Number Phone" class="form-control" formControlName="numberphone"
+                     id="numberphone" name="numberphone" required>
+            </mat-form-field>
+            <div *ngIf="signupform.get('numberphone').touched && signupform.get('numberphone').invalid">
+              <p> Number Phone is not valid</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Email" formControlName="email" class="form-control" id="email" name="email"
+                     required>
+            </mat-form-field>
+            <div *ngIf="signupform.get('email').touched && signupform.get('email').invalid">
+              <p>Email is not valid</p>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="signup()" color="primary">Sign Up</button>
+  </mat-card-actions>
+</mat-card>
