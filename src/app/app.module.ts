@@ -11,8 +11,9 @@ import {CustomMaterialModule} from './core/material.module';
 import {SignupComponent} from './signup/signup.component';
 import {HttpClientModule} from '@angular/common/http';
 import {IndexComponent} from './index/index.component';
-import {FormBuilder, FormGroup} from '@angular/forms';
-import { ScreensaveComponent } from './screensave/screensave.component';
+
+import {ScreensaveComponent} from './screensave/screensave.component';
+
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
 
 @NgModule({
@@ -23,6 +24,7 @@ import {MatPasswordStrengthModule} from '@angular-material-extensions/password-s
     SignupComponent,
     IndexComponent,
     ScreensaveComponent
+
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,7 @@ import {MatPasswordStrengthModule} from '@angular-material-extensions/password-s
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatPasswordStrengthModule
+    MatPasswordStrengthModule,
   ],
   providers: [Validators],
   bootstrap: [AppComponent]

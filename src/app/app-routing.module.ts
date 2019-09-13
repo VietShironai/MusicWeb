@@ -13,8 +13,9 @@ const routes: Routes = [
   {path: 'signUp', component : SignupComponent},
   {path: 'index', component: IndexComponent},
   {path: '', component: IndexComponent},
-  {path: 'screensaver', component: ScreensaveComponent}
-];
+
+  {path:'screensaver',component: ScreensaveComponent}]
+
 
 @NgModule({
   imports: [

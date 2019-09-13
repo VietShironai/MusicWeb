@@ -20,8 +20,9 @@
           <td>
             <mat-form-field class="example-full-width">
               <mat-pass-toggle-visibility #toggle matSuffix></mat-pass-toggle-visibility>
-              <input matInput placeholder="Password" id="password"  class="form-control" name="password"
-                     formControlName="password" [type]="toggle.type" required>
+
+              <input matInput placeholder="Password" [type]="toggle.type" id="password" class="form-control" name="password"
+                     formControlName="password" required>
 
             </mat-form-field>
             <div *ngIf="signupform.get('password').touched && signupform.get('password').errors">
