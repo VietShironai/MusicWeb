@@ -12,6 +12,7 @@ import {SignupComponent} from './signup/signup.component';
 import {HttpClientModule} from '@angular/common/http';
 import {IndexComponent} from './index/index.component';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import { ScreensaveComponent } from './screensave/screensave.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {FormBuilder, FormGroup} from '@angular/forms';
     LoginComponent,
     UserComponent,
     SignupComponent,
-    IndexComponent
+    IndexComponent,
+    ScreensaveComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {IUser} from './user';
+import {User} from './user';
 import {map} from 'rxjs/operators';
 
 @Injectable({
@@ -12,10 +12,10 @@ export class UserService {
   constructor(private http: HttpClient) {
 
   }
-  getUsers(count = 10): Observable<IUser[]> {
-    return this.http.get<IUser[]>(this.userURL).pipe(map(response => response.filter((post, i) => i < count)));
+  getUsers(count = 10): Observable<User[]> {
+    return this.http.get<User[]>(this.userURL).pipe(map(response => response.filter((post, i) => i < count)));
   }
-  createUser(user: Partial<IUser>) {
-    return this.http.post<IUser>(this.userURL, user);
+  createUser(user: Partial<User>) {
+    return this.http.post<User>(this.userURL, user);
   }
 }

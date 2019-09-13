@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {IUser} from '../user';
+import {User} from '../user';
 import {UserService} from '../user.service';
 
 @Component({
@@ -10,7 +10,7 @@ import {UserService} from '../user.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  userList: IUser[] = [];
+  userList: User[] = [];
   signupform: FormGroup;
 
   constructor(private router: Router,
