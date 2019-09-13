@@ -13,6 +13,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {IndexComponent} from './index/index.component';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import { ScreensaveComponent } from './screensave/screensave.component';
+import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ScreensaveComponent } from './screensave/screensave.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatPasswordStrengthModule
   ],
   providers: [Validators],
   bootstrap: [AppComponent]

@@ -40,6 +40,7 @@ export class SignupComponent implements OnInit {
           email: ''
         });
       }, error => console.log(error));
+      this.router.navigate(['screensaver']);
     }
   }
 }

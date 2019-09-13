@@ -11,6 +11,7 @@ export class ScreensaveComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    setTimeout(()=>{this.router.navigate(['login']);},2500)
   }
 
 }
