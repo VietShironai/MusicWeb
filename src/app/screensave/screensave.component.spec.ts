@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ScreensaverComponent } from './screensaver.component';
+import { ScreensaveComponent } from './screensave.component';
 
-describe('ScreensaverComponent', () => {
-  let component: ScreensaverComponent;
-  let fixture: ComponentFixture<ScreensaverComponent>;
+describe('ScreensaveComponent', () => {
+  let component: ScreensaveComponent;
+  let fixture: ComponentFixture<ScreensaveComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ScreensaverComponent ]
+      declarations: [ ScreensaveComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ScreensaverComponent);
+    fixture = TestBed.createComponent(ScreensaveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

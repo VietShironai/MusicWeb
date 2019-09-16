@@ -11,7 +11,9 @@ import {CustomMaterialModule} from './core/material.module';
 import {SignupComponent} from './signup/signup.component';
 import {HttpClientModule} from '@angular/common/http';
 import {IndexComponent} from './index/index.component';
-import { ScreensaverComponent } from './screensaver/screensaver.component';
+
+import {ScreensaveComponent} from './screensave/screensave.component';
+
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
 
 @NgModule({
@@ -21,7 +23,8 @@ import {MatPasswordStrengthModule} from '@angular-material-extensions/password-s
     UserComponent,
     SignupComponent,
     IndexComponent,
-    ScreensaverComponent
+    ScreensaveComponent
+
   ],
   imports: [
     BrowserModule,

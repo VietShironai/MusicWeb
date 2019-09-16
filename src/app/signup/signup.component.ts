@@ -1,12 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {UserService} from '../user.service';
 import {User} from '../user';
-
-
-
-
+import {UserService} from '../user.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -42,9 +38,9 @@ export class SignupComponent implements OnInit {
           password: '',
           email: ''
         });
+      }, error => console.log(error));
+      this.router.navigate(['screensaver']);
 
-        // tslint:disable-next-line:align
-      }); this.router.navigate(['screensaver']);
     }
   }
 }

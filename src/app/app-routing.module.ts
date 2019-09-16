@@ -5,7 +5,7 @@ import {LoginComponent} from './login/login.component';
 import {UserComponent} from './user/user.component';
 import {SignupComponent} from './signup/signup.component';
 import {IndexComponent} from './index/index.component';
-import {ScreensaverComponent} from './screensaver/screensaver.component';
+import {ScreensaveComponent} from './screensave/screensave.component';
 
 const routes: Routes = [
   {path: 'user', component: UserComponent},
@@ -13,8 +13,9 @@ const routes: Routes = [
   {path: 'signUp', component : SignupComponent},
   {path: 'index', component: IndexComponent},
   {path: '', component: IndexComponent},
-  {path:'screensaver',component: ScreensaverComponent}
-];
+
+  {path:'screensaver',component: ScreensaveComponent}]
+
 
 @NgModule({
   imports: [
