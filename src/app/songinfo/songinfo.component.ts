@@ -12,4 +12,7 @@ export class SonginfoComponent implements OnInit {
   ngOnInit() {
   }
 
+  upload() {
+
+  }
 }
