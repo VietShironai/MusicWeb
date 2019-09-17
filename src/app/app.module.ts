@@ -15,6 +15,7 @@ import {IndexComponent} from './index/index.component';
 import {ScreensaveComponent} from './screensave/screensave.component';
 
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
+import { SonginfoComponent } from './songinfo/songinfo.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {MatPasswordStrengthModule} from '@angular-material-extensions/password-s
     UserComponent,
     SignupComponent,
     IndexComponent,
-    ScreensaveComponent
+    ScreensaveComponent,
+    SonginfoComponent
 
   ],
   imports: [
