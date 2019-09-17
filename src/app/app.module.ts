@@ -16,6 +16,8 @@ import {ScreensaveComponent} from './screensave/screensave.component';
 
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
 import { SonginfoComponent } from './songinfo/songinfo.component';
+import { MainwebComponent } from './mainweb/mainweb.component';
+import {MatSelectModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { SonginfoComponent } from './songinfo/songinfo.component';
     SignupComponent,
     IndexComponent,
     ScreensaveComponent,
-    SonginfoComponent
+    SonginfoComponent,
+    MainwebComponent
 
   ],
   imports: [
@@ -37,6 +40,7 @@ import { SonginfoComponent } from './songinfo/songinfo.component';
     HttpClientModule,
     ReactiveFormsModule,
     MatPasswordStrengthModule,
+    MatSelectModule,
   ],
   providers: [Validators],
   bootstrap: [AppComponent]

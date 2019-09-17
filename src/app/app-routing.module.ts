@@ -6,6 +6,7 @@ import {UserComponent} from './user/user.component';
 import {SignupComponent} from './signup/signup.component';
 import {IndexComponent} from './index/index.component';
 import {ScreensaveComponent} from './screensave/screensave.component';
+import {SonginfoComponent} from './songinfo/songinfo.component';
 
 const routes: Routes = [
   {path: 'user', component: UserComponent},
@@ -14,7 +15,9 @@ const routes: Routes = [
   {path: 'index', component: IndexComponent},
   {path: '', component: IndexComponent},
 
-  {path:'screensaver',component: ScreensaveComponent}]
+  {path:'screensaver',component: ScreensaveComponent},
+  {path: 'createsong', component: SonginfoComponent}]
+
 
 
 @NgModule({

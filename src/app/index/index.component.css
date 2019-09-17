@@ -1,0 +1,10 @@
+.dropdown:hover > .dropdown-menu {
+  display: block;
+
+}
+
+.mega-menu {
+  width: 800px;
+  overflow: hidden;
+  padding: 10px;
+}
