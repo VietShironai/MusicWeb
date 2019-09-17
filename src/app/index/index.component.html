@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="container-fluid bg-light">
     <div class="container">
@@ -22,27 +21,34 @@
           <a routerLink="login"> Đăng Nhập </a>
           </span>
           </div>
-
-          <div *ngIf="authService.logedIn()" class="col-md-2 offset-md-1">
-            <div class="dropdown">
-              <button type="button" class="btn btn-danger">Hello</button>
-              <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
-                      aria-haspopup="true" aria-expanded="false">
-                <span class="sr-only">Toggle Dropdown</span>
+          <div *ngIf="authService.logedIn()">
+            <mat-card>Hello</mat-card>
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon color="primary">more_vert</mat-icon>
               </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Thong tin</a>
-                <a class="dropdown-item" routerLink="createsong">TAO BAI HAT</a>
-                <a class="dropdown-item" href="#">TAO PLAYLIST</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" (click)="logout()">lOGOUT</a>
-              </div>
-            </div>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                  <mat-icon>account_circle</mat-icon>
+                  <a>Thông tin người dùng</a>
+                </button>
+                <button mat-menu-item >
+                  <mat-icon color="primary">library_add</mat-icon>
+                  <a routerLink="createsong">Tạo bài hát</a>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>library_music</mat-icon>
+                  <a >Tạo playlist</a>
+                </button>
+                <button mat-button (click)="logout()" color="primary">Log Out</button>
+              </mat-menu>
 
+
+            </div>
           </div>
+
         </div>
 
-      </div>
+
 
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">

@@ -49,6 +49,7 @@ export class UserService {
     localStorage.removeItem('token');
   }
   getUser(){
-    return localStorage.getItem('role')
+    let username= JSON.stringify(localStorage.getItem('username'));
+    return username;
   }
 }
