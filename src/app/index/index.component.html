@@ -28,7 +28,14 @@
         </div>
       </div>
       <div class="col-md-2 offset-md-1">
-        <span class="input-group-text"><i class="material-icons"> supervised_user_circle</i><a routerLink="login">   Đăng Nhập </a></span>
+        <span class="input-group-text"><i class="material-icons"> supervised_user_circle</i>
+          <a *ngIf="!authService.logedIn()" routerLink="login"> Đăng Nhập </a>
+          <div *ngIf="authService.logedIn()">
+            <P>Hello </P>
+            <button  (click)="authService.logOut()"> LogOut</button>
+          </div>
+          <a *ngIf="authService.logedIn()" (click)="authService.logOut()"></a>
+        </span>
       </div>
       <div class="col-md ml-1">
         <div class="dropdown">

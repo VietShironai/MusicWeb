@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       // @ts-ignore
       if(data && data.code == 200){
         console.log('Login success with token', sessionStorage.getItem('token'), sessionStorage.getItem('role'));
-
+this.router.navigate([''])
       }
     });
 

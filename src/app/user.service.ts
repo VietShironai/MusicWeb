@@ -8,7 +8,7 @@ import {User} from './user';
   providedIn: 'root'
 })
 export class UserService {
-  private sercurityURL = 'http://localhost:8080/api/login'
+  private sercurityURL = 'http://localhost:8080/api/login';
   private userURL = 'http://localhost:8080/api/user';
 
   constructor(private http: HttpClient) {
@@ -31,12 +31,12 @@ export class UserService {
     try{
       return this.http.post(this.sercurityURL, {username:username, password: password}, httpOptions).pipe(map(userData => {
         console.log(userData);
-        sessionStorage.setItem('username', username);
+        localStorage.setItem('username', username);
         // @ts-ignore
         const tokenStr = userData.tokenType + ' ' + userData.accessToken;
-        sessionStorage.setItem('token', tokenStr);
+        localStorage.setItem('token', tokenStr);
         // @ts-ignore
-        sessionStorage.setItem('role', userData.roles[0].authority)
+        localStorage.setItem('role', userData.roles[0].authority)
         return userData;
       }));
     }catch (e) {
@@ -44,11 +44,11 @@ export class UserService {
     }
 
   }
-  isUserLogin() {
-    const user = sessionStorage.getItem('username');
-    return !(user == null);
-  }
+
   logOut() {
-    sessionStorage.removeItem('username');
+    localStorage.removeItem('token');
+  }
+  getUser(){
+    return localStorage.getItem('role')
   }
 }
