@@ -9,12 +9,18 @@ import {UserComponent} from './user/user.component';
 import {CustomMaterialModule} from './core/material.module';
 
 import {SignupComponent} from './signup/signup.component';
-import {HttpClientModule} from '@angular/common/http';
+
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+
 import {IndexComponent} from './index/index.component';
 
 import {ScreensaveComponent} from './screensave/screensave.component';
 
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
+import {HttpInterceptor} from "@angular/common/http";
+import {BasicAuthHtppInterceptorServiceService} from "./basic-auth-htpp-interceptor-service.service";
+import { UserInfomationComponent } from './user-infomation/user-infomation.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +29,9 @@ import {MatPasswordStrengthModule} from '@angular-material-extensions/password-s
     UserComponent,
     SignupComponent,
     IndexComponent,
-    ScreensaveComponent
-
+    ScreensaveComponent,
+    UserInfomationComponent,
+    UserInfomationComponent
   ],
   imports: [
     BrowserModule,
@@ -35,8 +42,15 @@ import {MatPasswordStrengthModule} from '@angular-material-extensions/password-s
     HttpClientModule,
     ReactiveFormsModule,
     MatPasswordStrengthModule,
+
   ],
-  providers: [Validators],
+  providers: [
+    Validators,
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: BasicAuthHtppInterceptorServiceService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule {

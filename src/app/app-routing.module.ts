@@ -6,6 +6,7 @@ import {UserComponent} from './user/user.component';
 import {SignupComponent} from './signup/signup.component';
 import {IndexComponent} from './index/index.component';
 import {ScreensaveComponent} from './screensave/screensave.component';
+import {UserInfomationComponent} from "./user-infomation/user-infomation.component";
 
 const routes: Routes = [
   {path: 'user', component: UserComponent},
@@ -13,7 +14,7 @@ const routes: Routes = [
   {path: 'signUp', component : SignupComponent},
   {path: 'index', component: IndexComponent},
   {path: '', component: IndexComponent},
-
+  {path:'userinfomation', component: UserInfomationComponent},
   {path:'screensaver',component: ScreensaveComponent}]
 
 

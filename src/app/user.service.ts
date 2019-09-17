@@ -21,6 +21,9 @@ export class UserService {
   createUser(user: Partial<User>) {
     return this.http.post<User>(this.userURL, user);
   }
+  getUserById(id:number): Observable<User>{
+    return this.http.get<User>(`${this.userURL}/${id}`)
+  }
 
   authenticate(username, password) {
     const httpOptions = {
