@@ -12,5 +12,7 @@ export class IndexComponent implements OnInit {
 
   ngOnInit() {
   }
-
+logout(){
+    this.authService.logOut()
+}
 }
