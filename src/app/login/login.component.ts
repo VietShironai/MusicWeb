@@ -1,8 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Router} from '@angular/router';
-import {AuthenticationService} from '../service/authentication.service';
-import {UserService} from '../service/user.service';
+import {AuthenticationService} from '../services/authentication.service';
+import {UserService} from '../services/user.service';
 import {log} from "util";
+import {User} from '../user';
+import {DataService} from '../services/data.service';
 // import {TokenStorage}
 ;
 
@@ -14,8 +16,10 @@ import {log} from "util";
 export class LoginComponent implements OnInit {
   username: string;
   password: string;
+
   constructor(private router: Router,
               private userService: UserService,
+              private data: DataService
               // private token: TokenStorage
   ) {
   }
@@ -25,14 +29,19 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  login(): void {
+  login():  void {
     this.userService.authenticate(this.username, this.password) .subscribe(data => {
       // @ts-ignore
       if(data && data.code == 200){
         console.log('Login success with token', sessionStorage.getItem('token'), sessionStorage.getItem('role'));
-this.router.navigate([''])
+        this.router.navigate([''])
       }
     });
+
+
+  }
+  setUsername(username){
+    this.data.getCurrentName(this.username);
 
   }
 }

@@ -13,16 +13,7 @@ export class AuthenticationService {
   private loginURL = 'http://localhost:8080/api/login';
   constructor(private http: HttpClient,
               private router: Router) {  }
-  // authenticate(username, password) {
-  //   return this.httpClient.post<any>(this.sercurityURL, {username, password}).pipe(map(userData => {
-  //     sessionStorage.setItem('username', username);
-  //     const tokenStr = 'Bearer' + userData.token;
-  //     sessionStorage.setItem('token', tokenStr);
-  //     return userData;
-  //   }));
-  //
-  //
-  // }
+
   isUserLogin() {
     const user = localStorage.getItem('username');
     return !(user == null);

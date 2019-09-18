@@ -48,8 +48,8 @@ export class UserService {
   logOut() {
     localStorage.removeItem('token');
   }
-  getUser(){
-    let username= JSON.stringify(localStorage.getItem('username'));
-    return username;
+  getUser():Observable<any>{
+    return this.http.get<any>(`${this.userURL + '/Current'}`);
   }
+
 }

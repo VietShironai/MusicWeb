@@ -22,7 +22,7 @@
           </span>
           </div>
           <div *ngIf="authService.logedIn()">
-            <mat-card>Hello</mat-card>
+            <mat-card > Hello {{setUsername()}}</mat-card>
             <button mat-icon-button [matMenuTriggerFor]="menu">
               <mat-icon color="primary">more_vert</mat-icon>
               </button>
