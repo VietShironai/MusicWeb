@@ -18,6 +18,7 @@ import {MatPasswordStrengthModule} from '@angular-material-extensions/password-s
 import { SonginfoComponent } from './songinfo/songinfo.component';
 import { MainwebComponent } from './mainweb/mainweb.component';
 import {MatSelectModule} from '@angular/material';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatSelectModule} from '@angular/material';
     IndexComponent,
     ScreensaveComponent,
     SonginfoComponent,
-    MainwebComponent
+    MainwebComponent,
+    FooterComponent
 
   ],
   imports: [
