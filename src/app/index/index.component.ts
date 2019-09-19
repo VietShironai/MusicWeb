@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from '../services/authentication.service';
 import {UserService} from '../services/user.service';
 import {BasicAuthHtppInterceptorServiceService} from '../services/basic-auth-htpp-interceptor-service.service';
@@ -10,27 +10,23 @@ import {DataService} from '../services/data.service';
   styleUrls: ['./index.component.css'],
 })
 export class IndexComponent implements OnInit {
-  private currentName;
+  private currentName= sessionStorage.getItem('username');
+
   constructor(private authService: AuthenticationService,
               private userService: UserService,
               private  interceptor: BasicAuthHtppInterceptorServiceService,
-              private data: DataService) { }
+              private data: DataService) {
+  }
 
   ngOnInit() {
-    this.userService.isLoggedIn.subscribe(data => {
-      if (data && data.code ==200) {
-        this.currentName= localStorage.getItem('username')
+  };
 
-      }
-    });
-  }
-logout(){
+  logout()
+  {
     this.authService.logOut();
+  }
+}
 
-}
-setUsername(){
- return  this.data.currentName.subscribe(username=>this.currentName= username);
 
-}
-}
+
 

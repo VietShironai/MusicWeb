@@ -15,18 +15,18 @@ export class AuthenticationService {
               private router: Router) {  }
 
   isUserLogin() {
-    const user = localStorage.getItem('username');
+    const user = sessionStorage.getItem('username');
     return !(user == null);
   }
   logOut() {
-    localStorage.removeItem('token');
+    sessionStorage.removeItem('token');
     this.router.navigate([''])
   }
   logedIn(){
-    return !!localStorage.getItem('token')
+    return !!sessionStorage.getItem('token')
   }
   getToken(){
-    return localStorage.getItem('token')
+    return sessionStorage.getItem('token')
   }
   loginUser(user){
     return this.http.post<any>(this.loginURL,user)
