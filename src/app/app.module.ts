@@ -15,10 +15,13 @@ import {IndexComponent} from './index/index.component';
 import {ScreensaveComponent} from './screensave/screensave.component';
 
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
-import { SonginfoComponent } from './songinfo/songinfo.component';
-import { MainwebComponent } from './mainweb/mainweb.component';
+import {SonginfoComponent} from './songinfo/songinfo.component';
+import {MainwebComponent} from './mainweb/mainweb.component';
 import {MatSelectModule} from '@angular/material';
-import { FooterComponent } from './footer/footer.component';
+import {FooterComponent} from './footer/footer.component';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
 
 @NgModule({
   declarations: [
@@ -30,8 +33,7 @@ import { FooterComponent } from './footer/footer.component';
     ScreensaveComponent,
     SonginfoComponent,
     MainwebComponent,
-    FooterComponent
-
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +45,8 @@ import { FooterComponent } from './footer/footer.component';
     ReactiveFormsModule,
     MatPasswordStrengthModule,
     MatSelectModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [Validators],
   bootstrap: [AppComponent]
