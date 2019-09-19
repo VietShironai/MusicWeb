@@ -17,6 +17,12 @@ export class IndexComponent implements OnInit {
               private data: DataService) { }
 
   ngOnInit() {
+    this.userService.isLoggedIn.subscribe(data => {
+      if (data && data.code ==200) {
+        this.currentName= localStorage.getItem('username')
+
+      }
+    });
   }
 logout(){
     this.authService.logOut();

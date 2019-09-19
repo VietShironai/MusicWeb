@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {User} from '../user';
 
@@ -10,6 +10,7 @@ import {User} from '../user';
 export class UserService {
   private sercurityURL = 'http://localhost:8080/api/login';
   private userURL = 'http://localhost:8080/api/user';
+  public isLoggedIn = new Subject<any>();
 
   constructor(private http: HttpClient) {
   }
