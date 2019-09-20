@@ -12,13 +12,12 @@ import {MainwebComponent} from './mainweb/mainweb.component';
 const routes: Routes = [
   {path: 'user', component: UserComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'signUp', component : SignupComponent},
+  {path: 'signUp', component: SignupComponent},
   {path: 'index', component: IndexComponent},
   {path: '', component: MainwebComponent},
 
-  {path:'screensaver',component: ScreensaveComponent},
+  {path: 'screensaver', component: ScreensaveComponent},
   {path: 'createsong', component: SonginfoComponent}]
-
 
 
 @NgModule({
