@@ -1,4 +1,4 @@
-export class Uploadsong {
+export class UploadSong {
   key: string;
   name: string;
   url: string;

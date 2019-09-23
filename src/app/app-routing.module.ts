@@ -17,7 +17,8 @@ const routes: Routes = [
   {path: '', component: MainwebComponent},
 
   {path: 'screensaver', component: ScreensaveComponent},
-  {path: 'createsong', component: SonginfoComponent}]
+  {path: 'createsong', component: SonginfoComponent},
+];
 
 
 @NgModule({

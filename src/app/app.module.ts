@@ -22,6 +22,8 @@ import {FooterComponent} from './footer/footer.component';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {AngularFirestore} from '@angular/fire/firestore';
+import {AngularFireStorageModule} from "@angular/fire/storage";
 
 @NgModule({
   declarations: [
@@ -46,9 +48,10 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
     MatPasswordStrengthModule,
     MatSelectModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
   ],
-  providers: [Validators],
+  providers: [Validators, AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule {

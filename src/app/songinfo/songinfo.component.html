@@ -36,25 +36,25 @@
           </tr>
           <tr>
             <td>
-              <div class="input-group mb-3 ">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                </div>
-                <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="inputGroupFile01"
-                         aria-describedby="inputGroupFileAddon01">
-                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                </div>
+              <div *ngIf="currentFileUpload" class="progress">
+                <div class="progress-bar progress-bar-info progress-bar-striped"
+                     role="progressbar" attr.aria-valuenow="{{percentage}}"
+                     aria-valuemin="0" aria-valuemax="100"
+                     [ngStyle]="{width:percentage+'%'}">
+                  {{percentage}}%</div>
               </div>
+              <label class="btn btn-default"> <input type="file"
+                                                     (change)="selectFile($event)">
+              </label>
             </td>
           </tr>
         </table>
       </form>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button (click)="upload()" color="primary">Upload</button>
+      <button class="btn btn-success" [disabled]="!selectedFiles"
+              (click)="upload()">Upload</button>
     </mat-card-actions>
   </mat-card>
-
 </div>
 <app-footer></app-footer>
