@@ -8,6 +8,7 @@ import {IndexComponent} from './index/index.component';
 import {ScreensaveComponent} from './screensave/screensave.component';
 import {SonginfoComponent} from './songinfo/songinfo.component';
 import {MainwebComponent} from './mainweb/mainweb.component';
+import {ListSongComponent} from './list-song/list-song.component';
 
 const routes: Routes = [
   {path: 'user', component: UserComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
 
   {path: 'screensaver', component: ScreensaveComponent},
   {path: 'createsong', component: SonginfoComponent},
+  {path: 'listsong', component: ListSongComponent}
 ];
 
 

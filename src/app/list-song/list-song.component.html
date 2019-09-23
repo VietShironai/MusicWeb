@@ -1,0 +1,10 @@
+<app-index></app-index>
+<div class="panel panel-primary">
+  <div class="panel-heading">List of Files</div>
+  <div *ngFor="let file of fileUploads">
+    <div class="panel-body">
+      <app-details-song [fileUpload]='file'></app-details-song>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
