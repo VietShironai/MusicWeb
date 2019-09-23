@@ -25,6 +25,9 @@ export class UserService {
   getUserById(id:number): Observable<User>{
     return this.http.get<User>(`${this.userURL}/${id}`)
   }
+  updateUser(user: Partial<User>, id: number){
+    return this.http.put<User>(`${this.userURL}/${id}`, user)
+  }
 
   authenticate(username, password) {
     const httpOptions = {
@@ -52,8 +55,6 @@ export class UserService {
   logOut() {
     sessionStorage.removeItem('token');
   }
-  getUser():Observable<any>{
-    return this.http.get<any>(`${this.userURL + '/Current'}`);
-  }
+
 
 }
