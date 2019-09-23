@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {UploadSong} from '../service-song/uploadsong';
+import {SongService} from '../service-song/song.service';
 
 @Component({
   selector: 'app-songinfo',
@@ -7,12 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SonginfoComponent implements OnInit {
 
-  constructor() { }
+  selectedFiles: FileList;
+  currentFileUpload: UploadSong;
+  percentage: number;
+
+  constructor(private uploadService: SongService) {
+  }
 
   ngOnInit() {
   }
 
-  upload() {
+  selectFile(event) {
+    this.selectedFiles = event.target.files;
+  }
 
+  upload() {
+    const file = this.selectedFiles.item(0);
+    this.selectedFiles = undefined;
+
+    this.currentFileUpload = new UploadSong(file);
+    this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(
+      percentage => {
+        this.percentage = Math.round(percentage);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 }
