@@ -19,11 +19,12 @@ import {SonginfoComponent} from './songinfo/songinfo.component';
 import {MainwebComponent} from './mainweb/mainweb.component';
 import {MatSelectModule} from '@angular/material';
 import {FooterComponent} from './footer/footer.component';
-import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
-import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {UserInforComponent} from './user-infor/user-infor.component';
+import {AngularFireModule} from '@angular/fire';
 import {AngularFirestore} from '@angular/fire/firestore';
-import {AngularFireStorageModule} from "@angular/fire/storage";
+
+
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {AngularFireStorageModule} from "@angular/fire/storage";
     SonginfoComponent,
     MainwebComponent,
     FooterComponent,
+    UserInforComponent
   ],
   imports: [
     BrowserModule,
@@ -47,9 +49,7 @@ import {AngularFireStorageModule} from "@angular/fire/storage";
     ReactiveFormsModule,
     MatPasswordStrengthModule,
     MatSelectModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule,
-    AngularFireStorageModule
+   AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [Validators, AngularFirestore],
   bootstrap: [AppComponent]

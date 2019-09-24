@@ -5,3 +5,21 @@
   overflow: hidden;
   padding: 10px;
 }
+.title{
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.36;
+  color: #32323d;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+  padding-right: 10px;
+float: left;
+}
+.user-button{
+  float: right;
+  padding-left: 10px;
+  position: absolute;
+}
+
