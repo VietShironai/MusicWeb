@@ -17,7 +17,7 @@ import {ScreensaveComponent} from './screensave/screensave.component';
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
 import {SonginfoComponent} from './songinfo/songinfo.component';
 import {MainwebComponent} from './mainweb/mainweb.component';
-import {MatSelectModule} from '@angular/material';
+import {MatSelectModule, MatTabsModule} from '@angular/material';
 import {FooterComponent} from './footer/footer.component';
 import {environment} from '../environments/environment';
 import {UserInforComponent} from './user-infor/user-infor.component';
@@ -49,7 +49,8 @@ import {AngularFirestore} from '@angular/fire/firestore';
     ReactiveFormsModule,
     MatPasswordStrengthModule,
     MatSelectModule,
-   AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    MatTabsModule
   ],
   providers: [Validators, AngularFirestore],
   bootstrap: [AppComponent]
