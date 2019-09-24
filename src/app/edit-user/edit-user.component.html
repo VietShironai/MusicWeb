@@ -1,0 +1,49 @@
+<app-index></app-index>
+<form class="container align-content-center" [formGroup]="edit_userform" (ngSubmit)="edit_userform.value">
+  <h1><p> Cập nhật thông tin</p>
+  </h1>
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Họ" class="form-control" formControlName="firstname">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Tên" class="form-control" formControlName="lastname">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Thành phố" class="form-control" formControlName="city">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Quận" class="form-control" formControlName="state">
+        </mat-form-field>
+      </td>
+
+
+    </tr>
+
+  </table>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Email" class="form-control" formControlName="email">
+  </mat-form-field>
+
+
+  <mat-form-field class="example-full-width">
+    <input matInput #phone maxlength="10" placeholder="Numberphone" class="form-control" formControlName="phone">
+    <mat-hint>{{phone.value.length}} / 10</mat-hint>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Save</button>
+</form>
+<app-footer></app-footer>

@@ -23,6 +23,7 @@ import {environment} from '../environments/environment';
 import {UserInforComponent} from './user-infor/user-infor.component';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestore} from '@angular/fire/firestore';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 
 
@@ -37,7 +38,8 @@ import {AngularFirestore} from '@angular/fire/firestore';
     SonginfoComponent,
     MainwebComponent,
     FooterComponent,
-    UserInforComponent
+    UserInforComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,

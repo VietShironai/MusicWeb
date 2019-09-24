@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../services/user.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {User} from '../user';
 
 @Component({
@@ -13,16 +13,14 @@ user:User;
 username= sessionStorage.getItem('username');
 
   constructor(private userService: UserService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private routerlink: Router) { }
 
   ngOnInit(){
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.userService.getUserById(id).subscribe(userdata => (this.user = userdata),
-      error => {
-        console.log(error);
-        this.user = null;
-      }
-    );
+
   }
 
+  edit() {
+    this.routerlink.navigate(['edit-user'])
+  }
 }
