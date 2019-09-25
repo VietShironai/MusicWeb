@@ -17,11 +17,11 @@ import {ScreensaveComponent} from './screensave/screensave.component';
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
 import {SonginfoComponent} from './songinfo/songinfo.component';
 import {MainwebComponent} from './mainweb/mainweb.component';
-import {MatSelectModule} from '@angular/material';
+import {MatSelectModule, MatTabsModule} from '@angular/material';
 import {FooterComponent} from './footer/footer.component';
-import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
-import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {UserInforComponent} from './user-infor/user-infor.component';
+import {AngularFireModule} from '@angular/fire';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {AngularFireStorageModule} from "@angular/fire/storage";
 import { ListSongComponent } from './list-song/list-song.component';
@@ -38,6 +38,8 @@ import { DetailsSongComponent } from './details-song/details-song.component';
     SonginfoComponent,
     MainwebComponent,
     FooterComponent,
+    UserInforComponent,
+    EditUserComponent
     ListSongComponent,
     DetailsSongComponent,
   ],

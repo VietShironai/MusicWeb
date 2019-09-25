@@ -9,6 +9,8 @@ import {ScreensaveComponent} from './screensave/screensave.component';
 import {SonginfoComponent} from './songinfo/songinfo.component';
 import {MainwebComponent} from './mainweb/mainweb.component';
 import {ListSongComponent} from './list-song/list-song.component';
+import {UserInforComponent} from './user-infor/user-infor.component';
+import {EditUserComponent} from './edit-user/edit-user.component';
 
 const routes: Routes = [
   {path: 'user', component: UserComponent},
@@ -16,10 +18,12 @@ const routes: Routes = [
   {path: 'signUp', component: SignupComponent},
   {path: 'index', component: IndexComponent},
   {path: '', component: MainwebComponent},
+  {path:'userinfo', component: UserInforComponent},
 
   {path: 'screensaver', component: ScreensaveComponent},
   {path: 'createsong', component: SonginfoComponent},
   {path: 'listsong', component: ListSongComponent}
+  {path:'edit-user', component: EditUserComponent}
 ];
 
 

@@ -1,0 +1,107 @@
+<app-index></app-index>
+<div class="container emp-profile">
+  <form method="post">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="profile-img">
+          <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt=""/>
+          <div class="file btn btn-lg btn-primary">
+            Change Photo
+            <input type="file" name="file"/>
+          </div>
+          <div class="col-md-12">
+            <div class="profile-work">
+              <p>Social network</p>
+              <a href="">Facebook</a><br/>
+              <a href="">Twitter</a><br/>
+              <a href="">ZALO</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="profile-head">
+          <h5>
+            {{username}}
+          </h5>
+          <h6>
+
+          </h6>
+          <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+        </div>
+        <div class="row">
+
+          <div class="col-md-12">
+            <mat-tab-group>
+              <mat-tab label="Thông tin người dùng">
+                <form>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>User Id:</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p>{{username}}</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Name:</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p>{{username}}</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Email:</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p></p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Phone:</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p>123 456 7890:</p>
+                    </div>
+                  </div>
+
+                </form>
+
+              </mat-tab>
+              <mat-tab label="Thay đổi Mật Khẩu">
+                <form class="col-md-12">
+                  <div class="row">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Mật khẩu cũ">
+                    </mat-form-field>
+                  </div>
+                  <div class="row">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Mật khẩu mới">
+                    </mat-form-field>
+                  </div>
+                  <div class="row">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Nhập lại mật khẩu">
+                    </mat-form-field>
+                  </div>
+
+
+                </form>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-2">
+        <button mat-raised-button color="primary" (click)="edit()">Cập nhật thông tin</button>
+      </div>
+
+    </div>
+
+  </form>
+</div>

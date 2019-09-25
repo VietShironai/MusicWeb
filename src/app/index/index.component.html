@@ -21,10 +21,28 @@
           <a routerLink="login"> Đăng Nhập </a>
           </span>
           </div>
-          <div *ngIf="authService.logedIn()">
-            <mat-card > Hello {{currentName}}</mat-card>
-            <button mat-icon-button [matMenuTriggerFor]="menu">
+          <div class="user-container" *ngIf="authService.logedIn()">
+            <mat-card class="title">{{currentName}}</mat-card>
+          </div>
+          <div>
+            <button class="user-button" mat-icon-button [matMenuTriggerFor]="menu">
               <mat-icon color="primary">more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>account_circle</mat-icon>
+                <a routerLink="userinfo">Thông tin người dùng</a>
+              </button>
+              <button mat-menu-item>
+                <mat-icon color="primary">library_add</mat-icon>
+                <a routerLink="createsong">Tạo bài hát</a>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>library_music</mat-icon>
+                <a>Tạo playlist</a>
+              </button>
+              <button mat-button (click)="logout()" color="primary">Log Out</button>
+            </mat-menu>
               </button>
               <mat-menu #menu="matMenu">
                 <button mat-menu-item>
