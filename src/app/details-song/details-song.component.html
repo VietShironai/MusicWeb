@@ -1,4 +1,15 @@
-<table>
-  <a href="{{fileUpload.url}}">{{fileUpload.name}}</a>
-  <button (click)='deleteFileUpload(fileUpload)' class="btn btn-danger btn-xs" style="float: right">Delete</button>
-</table>
+<div class="container">
+
+    <div class="row">
+      <div class="col col-md-10 ">
+
+        <a href="{{fileUpload.url}}">{{fileUpload.name}}</a>
+      </div>
+      <div class="col col-md-2">
+        <button (click)='deleteFileUpload(fileUpload)' class="btn btn-danger btn-xs" style="float: right">Delete</button>
+      </div>
+    </div>
+
+
+
+</div>
