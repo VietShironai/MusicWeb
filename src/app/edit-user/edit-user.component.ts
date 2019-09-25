@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FirebaseService} from '../services/firebase.service';
-import {FormBuilder, FormControl, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
-  edit_userform: any;
+  edit_userform: FormGroup;
 
   constructor(private firebaseService: FirebaseService,
   private fb: FormBuilder,
@@ -30,7 +30,6 @@ export class EditUserComponent implements OnInit {
       firstname: ['', Validators.required ],
       lastname: ['', Validators.required ],
       phone: ['', Validators.required ],
-      email:['', Validators.required ],
       city: ['', Validators.required ],
       state: ['', Validators.required ]
     });

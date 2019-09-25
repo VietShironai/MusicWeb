@@ -22,12 +22,12 @@ import {FooterComponent} from './footer/footer.component';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {UserInforComponent} from './user-infor/user-infor.component';
-import {AngularFireModule} from '@angular/fire';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {AngularFireStorageModule} from "@angular/fire/storage";
 import { ListSongComponent } from './list-song/list-song.component';
 import { DetailsSongComponent } from './details-song/details-song.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
 
 
 
@@ -43,7 +43,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     MainwebComponent,
     FooterComponent,
     UserInforComponent,
-    EditUserComponent
+    EditUserComponent,
     ListSongComponent,
     DetailsSongComponent,
   ],
@@ -59,7 +59,8 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     MatSelectModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    MatTabsModule
   ],
   providers: [Validators, AngularFirestore],
   bootstrap: [AppComponent]

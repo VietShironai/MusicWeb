@@ -33,7 +33,7 @@ export class UserService {
       })
     };
     try{
-      return this.http.post(this.sercurityURL, {username:username, password: password}, httpOptions).pipe(map(userData => {
+      return this.http.post(this.sercurityURL, {username:username, password: password,}, httpOptions).pipe(map(userData => {
         console.log(userData);
         sessionStorage.setItem('username', username);
         // @ts-ignore
