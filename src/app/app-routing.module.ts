@@ -10,6 +10,7 @@ import {SonginfoComponent} from './songinfo/songinfo.component';
 import {MainwebComponent} from './mainweb/mainweb.component';
 import {UserInforComponent} from './user-infor/user-infor.component';
 import {EditUserComponent} from './edit-user/edit-user.component';
+import {ListSongComponent} from './list-song/list-song.component';
 
 const routes: Routes = [
   {path: 'user', component: UserComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
 
   {path: 'screensaver', component: ScreensaveComponent},
   {path: 'createsong', component: SonginfoComponent},
+  {path: 'listsong', component: ListSongComponent}
   {path:'edit-user', component: EditUserComponent}
 ];
 
