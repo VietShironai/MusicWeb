@@ -26,6 +26,8 @@ import {AngularFirestore} from '@angular/fire/firestore';
 import {AngularFireStorageModule} from "@angular/fire/storage";
 import { ListSongComponent } from './list-song/list-song.component';
 import { DetailsSongComponent } from './details-song/details-song.component';
+import {EditUserComponent} from "./edit-user/edit-user.component";
+import {AngularFireDatabaseModule} from "@angular/fire/database";
 
 @NgModule({
   declarations: [
@@ -39,7 +41,7 @@ import { DetailsSongComponent } from './details-song/details-song.component';
     MainwebComponent,
     FooterComponent,
     UserInforComponent,
-    EditUserComponent
+    EditUserComponent,
     ListSongComponent,
     DetailsSongComponent,
   ],
@@ -55,7 +57,8 @@ import { DetailsSongComponent } from './details-song/details-song.component';
     MatSelectModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    MatTabsModule
   ],
   providers: [Validators, AngularFirestore],
   bootstrap: [AppComponent]

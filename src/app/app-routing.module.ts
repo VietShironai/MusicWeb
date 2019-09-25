@@ -22,7 +22,7 @@ const routes: Routes = [
 
   {path: 'screensaver', component: ScreensaveComponent},
   {path: 'createsong', component: SonginfoComponent},
-  {path: 'listsong', component: ListSongComponent}
+  {path: 'listsong', component: ListSongComponent},
   {path:'edit-user', component: EditUserComponent}
 ];
 
