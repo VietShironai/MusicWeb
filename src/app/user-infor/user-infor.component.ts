@@ -11,16 +11,28 @@ import {User} from '../user';
 export class UserInforComponent implements OnInit {
 user:User;
 username= sessionStorage.getItem('username');
+  new_password1: String;
+  new_password2: String;
 
   constructor(private userService: UserService,
               private route: ActivatedRoute,
               private routerlink: Router) { }
 
   ngOnInit(){
+    const id = sessionStorage.id;
+         console.log(id);
+        this.user = null;
+
+    ;
 
   }
 
   edit() {
     this.routerlink.navigate(['edit-user'])
+  }
+
+  updatePassword() {
+
+
   }
 }

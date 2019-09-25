@@ -18,12 +18,12 @@ const routes: Routes = [
   {path: 'signUp', component: SignupComponent},
   {path: 'index', component: IndexComponent},
   {path: '', component: MainwebComponent},
-  {path:'userinfo', component: UserInforComponent},
+  {path: 'userinfo', component: UserInforComponent},
 
   {path: 'screensaver', component: ScreensaveComponent},
   {path: 'createsong', component: SonginfoComponent},
   {path: 'listsong', component: ListSongComponent},
-  {path:'edit-user', component: EditUserComponent}
+  {path: 'edit-user', component: EditUserComponent}
 ];
 
 

@@ -2,9 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthenticationService} from '../services/authentication.service';
 import {UserService} from '../services/user.service';
-import {log} from "util";
-import {User} from '../user';
-import {DataService} from '../services/data.service';
+
 // import {TokenStorage}
 ;
 
@@ -19,7 +17,6 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router,
               private userService: UserService,
-              private data: DataService
               // private token: TokenStorage
   ) {
   }
@@ -41,8 +38,5 @@ export class LoginComponent implements OnInit {
 
 
   }
-  setUsername(username){
-    this.data.getCurrentName(this.username);
 
-  }
 }

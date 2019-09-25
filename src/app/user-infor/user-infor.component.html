@@ -75,19 +75,18 @@
                 <form class="col-md-12">
                   <div class="row">
                     <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Mật khẩu cũ">
+                      <input matInput placeholder="Mật khẩu mới" [(ngModel)]="new_password1" name="new_password1">
                     </mat-form-field>
                   </div>
                   <div class="row">
                     <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Mật khẩu mới">
+                      <input matInput placeholder="Nhập lại mật khẩu" [(ngModel)]="new_password2" name="new_password2">
+                      <div *ngIf="new_password1 !== new_password2">
+                        <p>Mật khẩu nhập lại phải giống nhau</p>
+                      </div>
                     </mat-form-field>
                   </div>
-                  <div class="row">
-                    <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Nhập lại mật khẩu">
-                    </mat-form-field>
-                  </div>
+                  <button mat-button (click)="updatePassword()" >Cập nhật</button>
 
 
                 </form>
