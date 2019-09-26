@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {FirebaseService} from '../services/firebase.service';
+import {Component, OnInit, Optional} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
+import {UserService} from '../services/user.service';
+import {User} from '../user';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-edit-user',
@@ -10,29 +12,53 @@ import {Router} from '@angular/router';
 })
 export class EditUserComponent implements OnInit {
   edit_userform: FormGroup;
+  user: Partial<User>;
 
-  constructor(private firebaseService: FirebaseService,
-  private fb: FormBuilder,
-              private router: Router) { }
+  constructor(private userService: UserService,
+              private fb: FormBuilder,
+              private router: Router) {
+  }
 
-  ngOnInit() {this.createForm()
+  ngOnInit() {
+    this.createForm();
+    const id= sessionStorage.getItem('id');
+
+    // @ts-ignore
+    this.userService.getUserById(id).subscribe(data => {
+      this.user = data;
+    });
+    // @ts-ignore
   }
-  onSubmit(value){
-    this.firebaseService.createUser(value)
-      .then(
-        res => {
-          this.router.navigate(['userinfo']);
-        }
-      )
-  }
+
+
   createForm() {
     this.edit_userform = this.fb.group({
-      firstname: ['', Validators.required ],
-      lastname: ['', Validators.required ],
-      phone: ['', Validators.required ],
-      city: ['', Validators.required ],
-      state: ['', Validators.required ]
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      city: ['', Validators.required],
+      state: ['', Validators.required]
     });
   }
+
+  onSubmit() {
+
+
+
+    if (this.edit_userform.valid) {
+      const id = sessionStorage.getItem('id');
+      const {value} = this.edit_userform;
+      // @ts-ignore
+
+
+      // @ts-ignore
+      this.userService.updateUser(id,value).subscribe(
+        next => {
+          this.router.navigate(['']);
+        },
+        error => console.log(error)
+      );
+    }
+  }
+
 
 }

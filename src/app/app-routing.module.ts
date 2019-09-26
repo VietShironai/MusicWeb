@@ -23,6 +23,7 @@ const routes: Routes = [
   {path: 'screensaver', component: ScreensaveComponent},
   {path: 'createsong', component: SonginfoComponent},
   {path: 'listsong', component: ListSongComponent},
+  {path:'edit-info', component:EditUserComponent}
 
 ];
 

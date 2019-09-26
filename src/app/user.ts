@@ -9,4 +9,8 @@ export class User {
   password: string;
   email: string;
   phone: number;
+  city: String;
+  state: String;
+  firstname:String;
+  lastname: String;
 }

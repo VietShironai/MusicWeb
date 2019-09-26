@@ -25,6 +25,12 @@ export class UserService {
   getUserById(id:number): Observable<User>{
     return this.http.get<User>(`${this.userURL}/${id}`)
   }
+  updateUser(id: number, user: Observable<User>): Observable<User>{
+    return  this.http.put<User>(`${this.userURL}/${id}`, user)
+  }
+  deleteUser(id: number){
+    return this.http.delete(`${this.userURL}/${id}`);
+  }
 
   authenticate(username, password) {
     const httpOptions = {
@@ -36,7 +42,7 @@ export class UserService {
       return this.http.post(this.sercurityURL, {username:username, password: password,}, httpOptions).pipe(map(userData => {
         console.log(userData);
         sessionStorage.setItem('username', username);
-        sessionStorage.setItem('password', password)
+        sessionStorage.setItem('password', password);
         // @ts-ignore
         const tokenStr = userData.tokenType + ' ' + userData.accessToken;
         sessionStorage.setItem('token', tokenStr);

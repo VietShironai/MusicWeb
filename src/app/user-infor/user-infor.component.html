@@ -34,34 +34,76 @@
           <div class="col-md-12">
             <mat-tab-group>
               <mat-tab label="Thông tin người dùng">
-                <form>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label>Name :</label>
-                    </div>
-                    <div class="col-md-6">
-                      <p>{{user.username}}</p>
-                    </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>Name :</label>
                   </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label>Email :</label>
-                    </div>
-                    <div class="col-md-6">
-                      <p>{{user.email}}</p>
-                    </div>
+                  <div class="col-md-6">
+                    <p>{{user.username}}</p>
                   </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label>Phone:</label>
-                    </div>
-                    <div class="col-md-6">
-                      <p>{{user.phone}}</p>
-                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>FirstName:</label>
                   </div>
+                  <div class="col-md-6" *ngIf="user.firstname != null">
+                    <p>{{user.firstname}}</p>
+                  </div>
+                  <div class="col-md-6" *ngIf="user.firstname == null">
+                    <p>Chua cap nhat</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>Last Name:</label>
+                  </div>
+                  <div class="col-md-6" *ngIf="user.lastname != null">
+                    <p>{{user.lastname}}</p>
+                  </div>
+                  <div class="col-md-6" *ngIf="user.firstname == null" >
+                    <p>Chua cap nhat</p>
+                  </div>
+                </div>
 
-                </form>
 
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>City:</label>
+                  </div>
+                  <div class="col-md-6" *ngIf="user.city != null">
+                    <p>{{user.city}}</p>
+                  </div>
+                  <div class="col-md-6" *ngIf="user.firstname == null" >
+                    <p>Chua cap nhat</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>State:</label>
+                  </div>
+                  <div class="col-md-6" *ngIf="user.state != null">
+                    <p>{{user.city}}</p>
+                  </div>
+                  <div class="col-md-6" *ngIf="user.firstname == null">
+                    <p>Chua cap nhat</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>Phone:</label>
+                  </div>
+                  <div class="col-md-6">
+                    <p>{{user.phone}}</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>Email :</label>
+                  </div>
+                  <div class="col-md-6">
+                    <p>{{user.email}}</p>
+                  </div>
+                </div>
               </mat-tab>
               <mat-tab label="Thay đổi Mật Khẩu">
                 <form class="col-md-12">
@@ -78,7 +120,7 @@
                       </div>
                     </mat-form-field>
                   </div>
-                  <button mat-button (click)="updatePassword()" >Cập nhật</button>
+                  <button mat-button (click)="updatePassword()">Cập nhật</button>
 
 
                 </form>
