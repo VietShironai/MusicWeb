@@ -8,6 +8,7 @@ import {IndexComponent} from './index/index.component';
 import {ScreensaveComponent} from './screensave/screensave.component';
 import {SonginfoComponent} from './songinfo/songinfo.component';
 import {MainwebComponent} from './mainweb/mainweb.component';
+import {ListSongComponent} from './list-song/list-song.component';
 import {UserInforComponent} from './user-infor/user-infor.component';
 import {EditUserComponent} from './edit-user/edit-user.component';
 import {ListSongComponent} from './list-song/list-song.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'createsong', component: SonginfoComponent},
   {path: 'listsong', component: ListSongComponent},
   {path:'edit-user', component: EditUserComponent}
+>>>>>>>>> Temporary merge branch 2
 ];
 
 
