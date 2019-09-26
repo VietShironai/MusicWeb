@@ -36,11 +36,12 @@ export class UserService {
       return this.http.post(this.sercurityURL, {username:username, password: password,}, httpOptions).pipe(map(userData => {
         console.log(userData);
         sessionStorage.setItem('username', username);
+        sessionStorage.setItem('password', password)
         // @ts-ignore
         const tokenStr = userData.tokenType + ' ' + userData.accessToken;
         sessionStorage.setItem('token', tokenStr);
         // @ts-ignore
-        sessionStorage.setItem('role', userData.roles[0].authority)
+        sessionStorage.setItem('role', userData.roles[0].authority);
         return userData;
       }));
     }catch (e) {
@@ -53,7 +54,7 @@ export class UserService {
     sessionStorage.removeItem('token');
   }
   getUser():Observable<any>{
-    return this.http.get<any>(`${this.userURL + '/Current'}`);
+    return this.http.get<any>(`${this.userURL + '{id}'}`);
   }
 
 }

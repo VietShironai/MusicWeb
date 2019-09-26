@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from '../services/authentication.service';
 import {UserService} from '../services/user.service';
-import {DataService} from '../services/data.service';
 
 @Component({
   selector: 'app-index',
