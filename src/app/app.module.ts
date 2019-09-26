@@ -9,7 +9,7 @@ import {UserComponent} from './user/user.component';
 import {CustomMaterialModule} from './core/material.module';
 
 import {SignupComponent} from './signup/signup.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {IndexComponent} from './index/index.component';
 
 import {ScreensaveComponent} from './screensave/screensave.component';
@@ -19,7 +19,6 @@ import {SonginfoComponent} from './songinfo/songinfo.component';
 import {MainwebComponent} from './mainweb/mainweb.component';
 import {MatSelectModule, MatTabsModule} from '@angular/material';
 import {FooterComponent} from './footer/footer.component';
-import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {UserInforComponent} from './user-infor/user-infor.component';
 import {AngularFireModule} from '@angular/fire';
@@ -29,11 +28,12 @@ import { ListSongComponent } from './list-song/list-song.component';
 import { DetailsSongComponent } from './details-song/details-song.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {AuthInterceptorService} from './services/auth-interceptor.service';
 
 
-import {EditUserComponent} from "./edit-user/edit-user.component";
-import {AngularFireDatabaseModule} from "@angular/fire/database";
 
+
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +65,11 @@ import {AngularFireDatabaseModule} from "@angular/fire/database";
     AngularFireStorageModule,
     MatTabsModule
   ],
-  providers: [Validators, AngularFirestore],
+  providers: [Validators, AngularFirestore,{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule {

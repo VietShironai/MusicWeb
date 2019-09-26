@@ -1,8 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UploadSong} from '../services/uploadsong';
 import {SongService} from '../services/song.service';
-import {UploadSong} from "../services/uploadsong";
-import {SongService} from "../services/song.service";
+
 
 
 @Component({

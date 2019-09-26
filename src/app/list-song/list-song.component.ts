@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {map} from 'rxjs/operators';
 import {SongService} from '../services/song.service';
-import {SongService} from "../services/song.service";
 
 @Component({
   selector: 'app-list-song',

@@ -23,7 +23,7 @@ export class SignupComponent implements OnInit {
       username: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(18)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       email: ['', [Validators.required, Validators.email]],
-      numberphone: ['', [Validators.required, Validators.pattern('(09|01[2|6|8|9])+([0-9]{8})\\b')]]
+      phone: ['', [Validators.required, Validators.pattern('(09|01[2|6|8|9])+([0-9]{8})\\b')]]
     });
     this.userService.getUsers().subscribe(data => (this.userList = data), error => console.log(error));
   }
@@ -36,7 +36,8 @@ export class SignupComponent implements OnInit {
         this.signupform.reset({
           username: '',
           password: '',
-          email: ''
+          email: '',
+          phone: '',
         });
       }, error => console.log(error));
       this.router.navigate(['screensaver']);

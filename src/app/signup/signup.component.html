@@ -33,10 +33,10 @@
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Number Phone" class="form-control" formControlName="numberphone"
-                     id="numberphone" name="numberphone" required>
+              <input matInput placeholder="Number Phone" class="form-control" formControlName="phone"
+                     id="phone" name="phone" required>
             </mat-form-field>
-            <div *ngIf="signupform.get('numberphone').touched && signupform.get('numberphone').invalid">
+            <div *ngIf="signupform.get('phone').touched && signupform.get('phone').invalid">
               <p> Number Phone is not valid</p>
             </div>
           </td>

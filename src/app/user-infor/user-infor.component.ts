@@ -9,7 +9,7 @@ import {User} from '../user';
   styleUrls: ['./user-infor.component.css']
 })
 export class UserInforComponent implements OnInit {
-user:User;
+user:Partial<User>;
 username= sessionStorage.getItem('username');
   new_password1: String;
   new_password2: String;
@@ -19,9 +19,10 @@ username= sessionStorage.getItem('username');
               private routerlink: Router) { }
 
   ngOnInit(){
-    const id = sessionStorage.id;
-         console.log(id);
-        this.user = null;
+    const id = sessionStorage.getItem('id');
+    // @ts-ignore
+    this.userService.getUserById(id).subscribe(data=> this.user= data)
+
 
     ;
 

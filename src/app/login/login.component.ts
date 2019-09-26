@@ -30,7 +30,11 @@ export class LoginComponent implements OnInit {
     this.userService.authenticate(this.username, this.password) .subscribe(data => {
       // @ts-ignore
       if(data && data.code == 200){
+
         this.userService.isLoggedIn.next(sessionStorage.getItem('username'));
+        // @ts-ignore
+        sessionStorage.setItem('id', data.id);
+        // @ts-ignore
         console.log('Login success with token', sessionStorage.getItem('token'), sessionStorage.getItem('role'));
         this.router.navigate([''])
       }
