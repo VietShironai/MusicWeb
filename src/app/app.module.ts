@@ -29,7 +29,6 @@ import {EditUserComponent} from './edit-user/edit-user.component';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {AuthInterceptorService} from './services/auth-interceptor.service';
 import {AngularFireStorageModule} from '@angular/fire/storage';
-import {NgxAudioPlayerModule} from 'ngx-audio-player';
 
 
 // @ts-ignore
