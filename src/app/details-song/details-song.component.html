@@ -2,14 +2,17 @@
 
     <div class="row">
       <div class="col col-md-10 ">
-
-        <a href="{{fileUpload.url}}">{{fileUpload.name}}</a>
+        <p>{{fileUpload.name}}</p>
+<!--        <mat-basic-audio-player  class="row"-->
+<!--                                 [audioUrl]="fileUpload.url" [title]="fileUpload.name"-->
+<!--                                 [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="msaapDisplayVolumeControls" >-->
+<!--        </mat-basic-audio-player>-->
+        <audio controls>
+          <source src="{{fileUpload.url}}" type="audio/ogg">
+        </audio>
       </div>
       <div class="col col-md-2">
         <button (click)='deleteFileUpload(fileUpload)' class="btn btn-danger btn-xs" style="float: right">Delete</button>
       </div>
     </div>
-
-
-
 </div>
