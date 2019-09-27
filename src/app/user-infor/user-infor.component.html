@@ -22,7 +22,7 @@
       <div class="col-md-6">
         <div class="profile-head">
           <h5>
-            {{username}}
+            {{user.username}}
           </h5>
           <h6>
 
@@ -106,24 +106,27 @@
                 </div>
               </mat-tab>
               <mat-tab label="Thay đổi Mật Khẩu">
-                <form class="col-md-12">
-                  <div class="row">
-                    <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Mật khẩu mới" [(ngModel)]="new_password1" name="new_password1">
-                    </mat-form-field>
-                  </div>
-                  <div class="row">
-                    <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Nhập lại mật khẩu" [(ngModel)]="new_password2" name="new_password2">
-                      <div *ngIf="new_password1 !== new_password2">
-                        <p>Mật khẩu nhập lại phải giống nhau</p>
-                      </div>
-                    </mat-form-field>
-                  </div>
-                  <button mat-button (click)="updatePassword()">Cập nhật</button>
+                <div class="col-md-12">
+                  <form [formGroup]="update_passwordForm" (ngSubmit)="updatePassword()">
+                    <div class="row">
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Mật khẩu mới" formControlName="password"  class="form-control"  name="password">
+                      </mat-form-field>
+                    </div>
+                    <div class="row">
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Nhập lại mật khẩu" class="form-control" formControlName="confirmPassword" name="confirmPassword">
+                        <div *ngIf="update_passwordForm.hasError('passwordnotmatch')">
+                          <p>Mật khẩu nhập lại phải giống nhau</p>
+                        </div>
+                      </mat-form-field>
+                    </div>
+                    <button mat-button type="submit">Cập nhật</button>
 
 
-                </form>
+                  </form>
+
+                </div>
               </mat-tab>
             </mat-tab-group>
           </div>

@@ -20,7 +20,7 @@ export class EditUserComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.createForm();
+    this.createForm()
     const id= sessionStorage.getItem('id');
 
     // @ts-ignore
@@ -41,19 +41,19 @@ export class EditUserComponent implements OnInit {
   }
 
   onSubmit() {
-
-
-
     if (this.edit_userform.valid) {
       const id = sessionStorage.getItem('id');
       const {value} = this.edit_userform;
+      const data={
+        ...this.user, ...value
+      }
       // @ts-ignore
 
 
       // @ts-ignore
-      this.userService.updateUser(id,value).subscribe(
+      this.userService.updateUser(id,data).subscribe(
         next => {
-          this.router.navigate(['']);
+          this.router.navigate(['userinfo']);
         },
         error => console.log(error)
       );
