@@ -23,14 +23,13 @@ import {environment} from '../environments/environment';
 import {UserInforComponent} from './user-infor/user-infor.component';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestore} from '@angular/fire/firestore';
-import {AngularFireStorageModule} from "@angular/fire/storage";
-import { ListSongComponent } from './list-song/list-song.component';
-import { DetailsSongComponent } from './details-song/details-song.component';
-import { EditUserComponent } from './edit-user/edit-user.component';
+import {ListSongComponent} from './list-song/list-song.component';
+import {DetailsSongComponent} from './details-song/details-song.component';
+import {EditUserComponent} from './edit-user/edit-user.component';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {AuthInterceptorService} from './services/auth-interceptor.service';
-
-
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {NgxAudioPlayerModule} from 'ngx-audio-player';
 
 
 // @ts-ignore
@@ -63,9 +62,10 @@ import {AuthInterceptorService} from './services/auth-interceptor.service';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
-    MatTabsModule
+    MatTabsModule,
+    // NgxAudioPlayerModule,
   ],
-  providers: [Validators, AngularFirestore,{
+  providers: [Validators, AngularFirestore, {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptorService,
     multi: true,

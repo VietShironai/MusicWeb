@@ -11,6 +11,8 @@ import {SongService} from '../services/song.service';
 })
 export class DetailsSongComponent implements OnInit {
 
+  msbapDisplayTitle = false;
+  msbapDisplayVolumeControls = true;
   @Input() fileUpload: UploadSong;
 
   constructor(private uploadService: SongService) { }
