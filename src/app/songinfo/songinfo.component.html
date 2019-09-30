@@ -5,35 +5,35 @@
       <mat-card-title>Tạo bài hát</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <form class="example-form">
+      <form class="example-form" [formGroup]="song_detailForm" (ngSubmit)="upload()">
         <table class="example-full-width" cellspacing="0">
           <tr>
             <td>
               <mat-form-field class="example-full-width mb-3">
-                <input matInput placeholder="Tên bài hát" name="song_name" required>
+                <input matInput placeholder="Tên bài hát" class="form-control" formControlName="song_name" name="song_name" required>
               </mat-form-field>
             </td>
           </tr>
           <tr>
             <td>
               <mat-form-field class="example-full-width mb-3 ">
-                <textarea matInput placeholder="Lyrics" type="lyrics" name="lyrics"></textarea>
+                <textarea matInput placeholder="Lyrics" type="lyrics" class="form-control" formControlName="lyrics" name="lyrics"></textarea>
               </mat-form-field>
             </td>
           </tr>
-          <tr>
-            <td>
-              <mat-form-field class="example-full-width mb-3 ">
-                <mat-label>Thể loại</mat-label>
-                <select matNativeControl required>
-                  <option value="volvo">Vpop</option>
-                  <option value="saab">Kpop</option>
-                  <option value="mercedes">Us-UK</option>
-                </select>
+<!--          <tr>-->
+<!--            <td>-->
+<!--              <mat-form-field class="example-full-width mb-3 ">-->
+<!--                <mat-label>Thể loại</mat-label>-->
+<!--                <select matNativeControl required>-->
+<!--                  <option value="volvo">Vpop</option>-->
+<!--                  <option value="saab">Kpop</option>-->
+<!--                  <option value="mercedes">Us-UK</option>-->
+<!--                </select>-->
 
-              </mat-form-field>
-            </td>
-          </tr>
+<!--              </mat-form-field>-->
+<!--            </td>-->
+<!--          </tr>-->
           <tr>
             <td>
               <div *ngIf="currentFileUpload" class="progress">
@@ -53,7 +53,7 @@
     </mat-card-content>
     <mat-card-actions>
       <button class="btn btn-success" [disabled]="!selectedFiles"
-              (click)="upload()">Upload</button>
+              type="submit">Upload</button>
     </mat-card-actions>
   </mat-card>
 </div>

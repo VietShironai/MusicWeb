@@ -3,8 +3,10 @@ export class UploadSong {
   name: string;
   url: string;
   file: File;
+  lyrics: String;
+  song_name:String;
 
-  constructor(file: File) {
+  constructor(file: File,) {
     this.file = file;
   }
 }
