@@ -30,15 +30,15 @@
               <mat-menu #menu="matMenu">
                 <button mat-menu-item>
                   <mat-icon>account_circle</mat-icon>
-                  <a routerLink="userinfo">Thông tin người dùng</a>
+                  <a [routerLink]="['/userinfo']" routerLinkActive="active">Thông tin người dùng</a>
                 </button>
                 <button mat-menu-item>
                   <mat-icon color="primary">library_add</mat-icon>
-                  <a routerLink="createsong">Tạo bài hát</a>
+                  <a [routerLink]="['/createsong']" routerLinkActive="active">Tạo bài hát</a>
                 </button>
                 <button mat-menu-item>
                   <mat-icon color="primary">library_music</mat-icon>
-                  <a routerLink="listsong">List Bai hat</a>
+                  <a [routerLink]="['/listsong']" routerLinkActive="active">List Bai hat</a>
                 </button>
                 <button mat-button (click)="logout()" color="primary">Log Out</button>
               </mat-menu>
